@@ -17,7 +17,8 @@ import (
 )
 
 type SimplifiedCalendar struct {
-	Events []SimplifiedCalendarEvent `json:"events"`
+	Events      []SimplifiedCalendarEvent `json:"events"`
+	DateCreated time.Time                 `json:"dateCreated"`
 }
 
 type SimplifiedCalendarEvent struct {
@@ -129,7 +130,7 @@ func main() {
 
 	}
 
-	jsonData, err := json.Marshal(SimplifiedCalendar{Events: allEvents})
+	jsonData, err := json.Marshal(SimplifiedCalendar{Events: allEvents, DateCreated: time.Now()})
 	if err != nil {
 		log.Println("Error marshalling calendar:", err)
 		return
