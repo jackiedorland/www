@@ -53,9 +53,9 @@ func getTZID(prop *ics.IANAProperty) string {
 func main() {
 	// set calendars
 	var calendarURLs = []string{
-		"https://calendar.google.com/calendar/ical/c_8b38ca45a6b42cad0c72a8ba8409d44403cd641ba82b4313fc29318b13825990%40group.calendar.google.com/private-31dc1f6512fcd745c3edaa81df2977e3/basic.ics", // Class Schedule
-		"https://calendar.google.com/calendar/ical/c_f4c1af37b4f706c050a9f0db66bbb5a72782f1018981a0fa015ef42830479ea0%40group.calendar.google.com/private-8fa0ca883add43387845a34493d19ecc/basic.ics", // Cornell
-		"https://calendar.google.com/calendar/ical/c_d9cf9dd33c3facfcebdd425f2e27e91bfeff241818b5d58d9f40156791475cf0%40group.calendar.google.com/private-6d5d97d21ca137523a7a8c17d753d295/basic.ics", // Work Schedule
+		os.Getenv("CALENDAR_1"),
+		os.Getenv("CALENDAR_2"),
+		os.Getenv("CALENDAR_3"),
 	}
 
 	var allEvents []SimplifiedCalendarEvent

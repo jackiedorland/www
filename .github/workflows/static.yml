@@ -38,6 +38,9 @@ jobs:
       - run: go run calendar-setup.go
         env: 
           CAL_KEY: ${{ secrets.CAL_KEY }} 
+          CALENDAR_1: ${{ secrets.CALENDAR_1 }} 
+          CALENDAR_2: ${{ secrets.CALENDAR_2 }} 
+          CALENDAR_3: ${{ secrets.CALENDAR_3 }} 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
