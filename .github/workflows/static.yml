@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-go@v6.2.0
       - run: go run calendar-setup.go
         env: 
-          CAL_KEY: ${{ secrets.CALKEY }} 
+          CAL_KEY: ${{ secrets.CAL_KEY }} 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
