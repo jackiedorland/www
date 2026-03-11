@@ -1,290 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jackie!</title>
+  <style>
+    @font-face {
+      font-family: "IBM PS/55 re";
+      src: url("fonts/Web437_IBM_PS-55_re.woff") format("woff");
+      font-display: swap;
+    }
 
-    <!-- Primary SEO Meta Tags -->
-    <title>jackie dorland</title>
-    <meta name="description" content="writer, philosophy student, activist, and professional coffee maker">
-    <meta name="keywords" content="student, writer, philosophy, political science, activism, ACLU">
-    <meta name="author" content="Jackie Dorland">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="homepage">
-    <meta property="og:description" content="writer, political science student, and barista">
-    <meta property="og:url" content="https://jackiedor.land">
-    <meta property="og:site_name" content="jackie dorland">
-    <meta property="og:locale" content="en_US">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>jackie dorland</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Helvetica, sans-serif;
-            background-color: white;
-            color: black;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            max-width: 1000px;
-            width: 90%;
-            display: flex;
-            gap: 60px;
-            margin-top: 40px;
-        }
-        
-        .sidebar {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .content {
-            flex: 2;
-            line-height: 1.6;
-        }
-        
-        .sidebar h1 {
-            font-size: 2.5rem;
-            line-height: 100%;
-            margin-bottom: 10px;
-        }
-        
-        .sidebar h1 .indent {
-            padding-left: 50px;
-        }
-        
-        .sidebar .tagline {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-        
-        .contact h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        .contact p {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        
-        .writing-links {
-            margin-top: 40px;
-        }
-        
-        .writing-links h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        .writing-links ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        
-        .writing-links li {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        
-        .writing-links li .author {
-            margin-left: 10px;
-        }
+    :root {
+      --bg: #f2ede4;
+      --fg: #423a37;
+      --muted: #7a6f62;
+      --link: #8b2020;
+      --rule: #c9c0b4;
+    }
 
-        .footer {
-            font-size: 0.8rem;
-            justify-content: center;
-        }
-        
-        .content .description {
-            font-size: 1rem;
-            margin-bottom: 40px;
-            line-height: 180%;
-        }
-        
-        .philosophy {
-            margin-bottom: 40px;
-        }
-        
-        .philosophy h1 {
-            margin-bottom: 40px;
-            font-size: 1.5rem;
-        }
-        
-        .philosophy p {
-            font-size: 1rem;
-            line-height: 180%;
-        }
-        
-        .content h1 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "IBM PS/55 re", "Courier New", Courier, monospace;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
 
-        .qualifications {
-            margin-bottom: 40px;
-        }
-        
-        .qualifications h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        
-        .qualifications ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        
-        .qualifications li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .services h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        
-        .services ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        
-        .services li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        a {
-            color: black;
-            text-decoration: underline;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 0;
-                align-items: flex-start;
-            }
-            
-            .container {
-                flex-direction: column;
-                gap: 40px;
-                width: 95%;
-                max-width: none;
-            }
-            
-            .sidebar {
-                min-width: auto;
-                text-align: center;
-                order: 1;
-            }
-            
-            .sidebar h1 {
-                font-size: 2.5rem;
-                text-align: center;
-                margin-bottom: 15px;
-            }
-            
-            .sidebar h1 .indent {
-                padding-left: 0;
-            }
-            
-            .sidebar .tagline {
-                text-align: center;
-                margin-bottom: 30px;
-                font-size: 1.2rem;
-            }
-            
-            .contact {
-                text-align: center;
-            }
-            
-            .content {
-                order: 2;
-            }
-            
-            .content h1 {
-                font-size: 1.5rem;
-                margin-bottom: 25px;
-            }
-            
-            .content .description {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-            
-            .footer {
-                text-align: center;
-                margin-top: 20px;
-            }
-        }
-    </style>
+    a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: #5a1a1a;
+    }
+
+    a:hover {
+      background: var(--fg);
+      color: var(--bg);
+      text-decoration: none;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0;
+    }
+
+    pre {
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 1.3;
+      overflow-x: auto;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    pre.cat {
+      float: right;
+      margin: 0 0 1rem 2rem;
+      clear: right;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    ul li::before {
+      content: "* ";
+      color: var(--muted);
+    }
+
+    ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      text-align: justify;
+    }
+
+    .section-label {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    .now-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .now-item .label {
+      color: var(--muted);
+      flex-shrink: 0;
+      min-width: 80px;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-info {
+      flex-shrink: 0;
+    }
+
+    pre.header-art {
+      font-family: "Courier New", Courier, monospace;
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 0.9;
+      letter-spacing: -0.25em;
+      flex-shrink: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .header-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .header-sub {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .header-links {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .header-links a {
+      color: var(--fg);
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      pre.header-art {
+        display: none;
+      }
+
+      /* drop floated animals on small screens so they don't crowd text */
+      pre.cat {
+        float: none !important;
+        margin: 0 0 1rem 0 !important;
+      }
+
+      .now-item {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0.75rem;
+      }
+
+      .now-item .label {
+        min-width: unset;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <h1>jackie<br><span class="indent">dorland</span></h1>
-            <br>
-            <div class="contact">
-                <h2>contact me</h2>
-                <p>e-mail: <a href="mailto:me@jackiedor.land">me@jackiedor.land</a></p>
-                <p>🇺🇸 english & 🇮🇹 italiano</p>
-            </div>
-            
-            <div class="writing-links">
-                <h2>things i'm doing (or have done)</h2>
-                <ul>
-                    <li><a href="docs/threecaskets.pdf"><i>Red Checkered Lies</i>, or A Case Study in Self-Diagnosis</a></li>
-                    <li><a href="https://github.com/jackiedorland/yui-hud">yuihud for Team Fortress 2</a></li>
-                </ul>
-            </div>
-            
-            <div class="writing-links">
-                <h2>things i'm reading (or read)</h2>
-                <ul>
-                    <li><b><i>Père Goriot</i></b><span class="author">by Honoré de Balzac</span></li>
-                    <li><b><i>An Introduction to Statistical Learning with Applications in Python</i></b><span class="author">by James Gareth</span></li>
-                    <li><b><i>Eichmann in Jerusalem: A Report on the Banality of Evil</i></b><span class="author">by Hannah Arendt</span></li>
-                    <li><b><i>Divina Commedia</i></b><span class="author">by Dante Alighieri</span></li>
-                    <li><b><i>En attendant Godot</i></b><span class="author">by Samuel Beckett (I also saw this one on Broadway!!)</span></li>
-                </ul>
-            </div>
-                <br><p class="footer">opinions expressed are solely my own and do not express the views or opinions of my employer or Cornell University</p>
-        </div>
-        
-        <div class="content">
-            <div class="description">
-               <h1>who am i?</h1>
-               <p>that's a pretty good question! does anybody really know who they are? do you?<br><br>
-               i'm jackie and i'm an undergraduate student in the <a href="https://as.cornell.edu">College of Arts and Sciences</a> at <a href="https://www.cornell.edu/">Cornell University</a>. i study a mix of government, public policy, data science, and whatever else interests me! i'm also an active member of the <a href="http://www.sealandserpent.org">Society of the Seal and Serpent</a>, and if you're at Cornell, consider checking us out!<br><br> on occasion i write things (and sometimes people even read them)... 
-               this website is basically my corner of the internet where i figure things out in public! essays, thoughts on politics and philosophy, maybe some rants about things that bother me. it's kinda my public journal, except i can't blame anyone but myself if you're reading this. i also do some creative writing from time to time, when i'm feeling particularly ambitious</p>
-               <p><br>anche, parlo italiano! al momento, sto studiando per ottenere la <a href="https://cils.unistrasi.it/1/97/48/Centro_CILS_-_Certificazione_di_Italiano_come_Lingua_Straniera.htm">Certificazione di Italiano come Lingua Straniera (CILS)</a>. contattami se vuoi parlare! </p>
-            </div>
-            
-            <div class="philosophy">
-                <h1>what am i working on?</h1>
-                <p>right now i'm juggling a lot... (aren't we all?) most of my time is split between coursework at Cornell and work at my café, with some occasional shenanigans inbetween all that! i serve as a member of the Criminal Justice Committee for the <a href="https://www.instagram.com/aclucornell/?hl=en">Cornell University chapter</a> of the <a href="https://www.aclu.org/"> American Civil Liberties Union</a> because civil liberties are pretty cool. i also serve as the Special Events Committee Chair for the <a href="https://www.cjas.org/">Cornell Anime Club</a>, come check us out!
-                <p><br>this Spring, i'm also an editor for <i><a href="https://logos.philosophy.cornell.edu/">Logos</a></i>, Cornell's undergraduate philosophy journal, which is a fancy way of saying i get to read a lot of essays about things like "what is being?" :)</p>
-                <br>between all that, you'll usually find me picking up shifts at the <a href="https://as.cornell.edu/about/temple-of-zeus">Temple of Zeus café</a>, where i make overpriced lattes for stressed-out (strung-out?) students (i am also a stressed-out student).<br><br>if you want to chat about philosophy, anime, Team Fortress 2, coffee, or whatever else, feel free to email me!</p>
-            </div>
-            
-        </div>
+
+<div class="header">
+  <div class="header-info">
+    <p class="header-name">jackie dorland</p>
+    <p class="header-sub">they/them &mdash; upstate new york</p>
+    <p class="header-links">
+      * <a href="https://github.com/jackiedorland">github.com/jackiedorland</a><br>
+      ✉ me (at) jackiedor (dot) land<br>
+    </p>
+  </div>
+  <pre class="header-art">
+⣿⠛⠛⠛⠛⠻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠛⢛⣿⠋⢀⡾⠃⠀⠀⠀⠀⢀⣤⣤⠤⠤⣤⣤⣀⣀⣀⣠⠶⡶⣤⣀⣠⠾⡷⣦⣀⣤⣤⡤⠤⠦⢤⣤⣄⡀⠀⢠⡶⢶⡄⠀⠀
+⢠⡟⠁⣴⣿⢤⡄⣴⢶⠶⡆⠈⢷⡀⠀⠀⠀⠀⢀⣭⣫⠵⠥⠽⣄⣝⠵⢍⣘⣄⠳⣤⣀⠀⠀⢀⡤⠊⣽⠁⠀⠸⣇⠀⢿⠀⠀
+⠸⢷⣴⣤⡤⠾⠇⣽⠋⠼⣷⠀⠈⢷⡄⢀⣤⡶⠋⠀⣀⡄⠤⠀⡲⡆⠀⠀⠈⠙⡄⠘⢮⢳⡴⠯⣀⢠⡏⠀⠀⠀⢻⠀⢸⠇⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⠛⠋⠉⢀⣴⠟⠉⢯⡞⡠⢲⠉⣼⠀⠀⡰⠁⡇⢀⢷⠀⣄⢵⠀⠈⡟⢄⠀⠀⠙⢷⣤⣤⣤⡿⢢⡿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠑⠊⠁⡼⣌⢠⢿⢸⢸⡀⢰⠁⡸⡇⡸⣸⢰⢈⠘⡄⠀⢸⠀⢣⡀⠀⠈⢮⢢⣏⣤⡾⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣯⣴⠞⡠⣼⠁⡘⣾⠏⣿⢇⣳⣸⣞⣀⢱⣧⣋⣞⡜⢳⡇⠀⢸⠀⢆⢧⠀⠰⣄⢏⢧⣾⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⡏⢰⠁⡻⠀⡟⡏⠉⠀⣀⠀⠀⠀⠀⣀⠁⠀⠉⠛⢽⠇⠀⣼⡆⠈⡆⠃⠀⡏⠻⣾⣽⣇⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⡇⠀⡇⡄⣿⠷⠿⠿⠛⠀⠀⠀⠀⠛⠻⠿⠿⠿⡜⢀⡴⡟⢸⣸⡼⠀⠀⡇⠀⡞⡆⢻⠙⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡶⢀⣼⣿⣬⣽⠧⠬⠇⠀⠀⠀⠀⠀⠀⢞⣯⣭⢺⣔⣪⣾⣤⠺⡇⢳⠀⢠⣧⡾⠛⠛⠻⠶⠞⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⢿⠟⠉⡀⠈⢦⡀⠀⠀⣠⠖⠒⠒⢤⡀⠀⢀⡼⠿⢇⡣⢬⣶⠷⢿⣤⡾⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⠾⠷⠖⠛⠛⠲⠶⠿⠤⣤⠤⠤⢷⣶⠋⠀⠀⠀⣱⠞⠁⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠓⠒⠚⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</pre>
+</div>
+
+<div class="section">
+  <p>hi im an undergrad at <a href="https://as.cornell.edu">Cornell</a> where i study statistics, literature and political science! right now, i'm kinda juggling a lot and trying to keep up with all my coursework! sorry if i'm a little late on responding to an email or other messages...</p>
+  <p>if you're at Cornell, come find me sometime at Zeus! i'm really addicted to coffee and i'm usually there... i make lattes for stressed students and i am also a stressed student!</p>
+  <p>this site has no javascript. it loads fast. it will look the same in 20 years! <a href="https://motherfuckingwebsite.com">as God intended!</a></p>
+</div>
+
+<hr>
+
+<div class="section clearfix">
+<pre class="cat" style="float:left; margin: 0 2rem 1rem 0;">
+              /^._
+,___,--~~~~--' /'~
+`~--~\ )___,)/'
+    (/\\_  (/\\_
+</pre>
+  <div style="overflow:hidden;">
+    <div class="section-label">// now</div>
+    <div class="now-item">
+      <span class="label">playing</span>
+      <span>TF2, 2fort, probably losing</span>
     </div>
+    <div class="now-item">
+      <span class="label">reading</span>
+      <span><a href="https://en.wikipedia.org/wiki/Père_Goriot">père goriot</a> by honore de balzac</span>
+    </div>
+    <div class="now-item">
+      <span class="label">editing</span>
+      <span><a href="https://logos.philosophy.cornell.edu/">logos</a>, cornell's undergrad philosophy journal</span>
+    </div>
+    <div class="now-item">
+      <span class="label">working</span>
+      <span><a href="https://as.cornell.edu/about/temple-of-zeus">temple of zeus</a>, lead barista </span>
+    </div>
+    <div class="now-item">
+      <span class="label">also</span>
+      <span>special events chair, <a href="https://www.cjas.org/">cornell anime club</a></span>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="section">
+  <div class="section-label">// things i've made/making</div>
+  <ul>
+    <li><a href="https://github.com/jackiedorland/sibyl">sibyl</a>, a performant time-series analysis library for Haskell</li>
+    <li><a href="docs/threecaskets.pdf">red checkered lies</a>, an essay; a case study in self-diagnosis</li>
+    <li><a href="https://github.com/jackiedorland/yui-hud">yuihud</a>, a hud for team fortress 2</li>
+  </ul>
+</div>
+
+<hr>
+
+<div class="section">
+  <div class="section-label">// things i've read/reading</div>
+  <ul>
+    <li><i>forecasting: principles and practice</i>, by george athanasopoulos</li>
+    <li><i>an introduction to statistical learning</i>, by james gareth</li>
+    <li><i>eichmann in jerusalem</i>, by hannah arendt</li>
+    <li><i>la divina commedia</i>, by dante alighieri</li>
+    <li><i>en attendant godot</i>, by beckett (saw it on broadway too)</li>
+  </ul>
+</div>
+
+<hr>
+
+
+
+<footer class="clearfix">
+<pre class="cat">
+  |\      _,,,---,,_
+  /,`.-'`'    -.  ;-;;,_
+ |,4-  ) )-,_..;\ (  `'-'
+'---''(_/--'  `-'\_)
+</pre>
+  <p>no trackers; no cookies; copyright 2026 jackie dorland</p>
+  <p>opinions expressed are solely my own and do not express the views of my employer or cornell university</p>
+</footer>
+
 </body>
 </html>
