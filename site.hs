@@ -63,8 +63,6 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
-
-
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
