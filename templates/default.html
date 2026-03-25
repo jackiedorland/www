@@ -5,6 +5,24 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>$title$</title>
+        <meta property="og:title" content="$title$" />
+        <meta property="og:site_name" content="jackie's site!" />
+        <meta property="og:url" content="https://jackiedor.land$url$" />
+        <meta property="og:image" content="https://jackiedor.land/images/og-default.png" />
+        $if(isPost)$
+        <meta property="og:type" content="article" />
+        $else$
+        <meta property="og:type" content="website" />
+        $endif$
+        $if(description)$
+        <meta property="og:description" content="$description$" />
+        $endif$
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="$title$" />
+        <meta name="twitter:image" content="https://jackiedor.land/images/og-default.png" />
+        $if(description)$
+        <meta name="twitter:description" content="$description$" />
+        $endif$
         <link rel="stylesheet" href="/css/default.css" />
         <link rel="stylesheet" href="/css/syntax.css" />
     </head>

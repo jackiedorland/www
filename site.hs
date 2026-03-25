@@ -12,7 +12,7 @@ main = hakyll $ do
         "fonts/*"     .||. 
         "docs/*"      .||.
         "favicon.ico" .||.
-        "CNAME") $ do
+        "CNAME")      $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -37,9 +37,10 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "blog archives"       `mappend`
-                    constField "isBlog" "true"               `mappend`
+                    listField "posts" postCtx (return posts)              `mappend`
+                    constField "title" "blog archives"                    `mappend`
+                    constField "description" "all the blog posts!"        `mappend`
+                    constField "isBlog" "true"                            `mappend`
                     defaultContext
 
             makeItem ""
@@ -53,9 +54,10 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let posts' = take 4 posts
                 indexCtx =
-                    listField "posts" postCtx (return posts') `mappend`
-                    constField "title" "jackie's site!"       `mappend`
-                    constField "isHome" "true"                `mappend`
+                    listField "posts" postCtx (return posts')                              `mappend`
+                    constField "title" "jackie's site!"                                    `mappend`
+                    constField "description" "student, barista, Haskeller"                 `mappend`
+                    constField "isHome" "true"                                             `mappend`
                     defaultContext
 
             getResourceBody
@@ -69,4 +71,5 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%d %b %Y" `mappend`
     constField "isBlog" "true"  `mappend`
+    constField "isPost" "true"  `mappend`
     defaultContext
