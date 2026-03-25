@@ -290,10 +290,15 @@ pre.header-art {
 }
 
 .tui-standalone .tui-titlebar,
-.tui-standalone .tui-divider,
+.tui-standalone .tui-divider {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
 .tui-standalone .tui-filelist {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+  margin-bottom: -1.45rem;
 }
 
 .tui-recent .tui-titlebar {
@@ -575,8 +580,9 @@ sup a, sub a {
 }
 
 sup a:hover, sub a:hover {
-  background: var(--fg);
-  color: var(--bg);
+  color: var(--fg);
+  text-decoration: underline;
+  background: none;
 }
 
 .footnotes {
