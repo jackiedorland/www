@@ -8,10 +8,11 @@ import           Text.Pandoc.Highlighting (styleToCss, haddock)
 main :: IO ()
 main = hakyll $ do
     match (
-        "images/*"  .||. 
-        "fonts/*"   .||. 
-        "docs/*"    .||.
-        "favicon.ico") $ do
+        "images/*"    .||. 
+        "fonts/*"     .||. 
+        "docs/*"      .||.
+        "favicon.ico" .||.
+        "CNAME") $ do
         route   idRoute
         compile copyFileCompiler
 
