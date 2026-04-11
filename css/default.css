@@ -4,6 +4,8 @@
   font-display: swap;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -228,11 +230,11 @@ ul ul, ul ol, ol ul, ol ol {
 }
 
 pre.header-art {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
   margin-bottom: 0;
   transform: translate(-8rem, 1rem);
   font-size: 20px;
-  line-height: 0.95;
+  line-height: 0.85;
   letter-spacing: -0.26em;
   flex-shrink: 1;
   min-width: 0;
@@ -474,9 +476,11 @@ div.sourceCode {
 div.sourceCode pre {
   padding: 0.75rem 1rem 1rem;
   margin: 0;
-  overflow-x: auto;
   font-size: 19px;
   position: relative;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow: visible;
 }
 
 div.sourceCode pre::before {
