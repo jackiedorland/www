@@ -1,5 +1,5 @@
 ---
-title: Rivulet for Wayland (prototype)
+title: "Spring Break, Rivulet, and An Ode to XMonad"
 date: 2026-04-11
 description: This post was originally made to the Haskell discourse.
 ---
