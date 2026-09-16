@@ -21,6 +21,7 @@
 }
 
 body {
+  isolation: isolate;
   background: var(--bg);
   color: var(--fg);
   font-family: "IBM PS/55 re", "Courier New", Courier, monospace;
@@ -30,6 +31,71 @@ body {
   max-width: 680px;
   margin: 0 auto;
   padding: 3rem 1.5rem 5rem;
+}
+
+.fish-tank {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  color: var(--muted);
+  opacity: 0.35;
+  font: 14px / 1 monospace;
+}
+
+.fish-tank span {
+  position: absolute;
+  white-space: pre;
+  animation: swim var(--speed) var(--delay) steps(80, end) infinite alternate;
+}
+
+.fish-tank b {
+  display: block;
+  font-weight: normal;
+  animation: turn calc(var(--speed) * 2) var(--delay) steps(1, end) infinite;
+}
+
+.fish-tank b i {
+  display: inline-block;
+  font-style: normal;
+  transform-origin: right;
+  animation: flick 0.7s var(--delay) steps(1, end) infinite;
+}
+
+.fish-tank .bubbles {
+  position: absolute;
+  top: 100%;
+  white-space: pre;
+  font-style: normal;
+  line-height: 1.8;
+  animation: rise var(--speed) var(--delay) steps(80, end) infinite;
+}
+
+@keyframes flick {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.45); }
+}
+
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 0; }
+  10%, 60% { opacity: 0.8; }
+  80%, 100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+@keyframes swim {
+  from { left: 0; top: var(--from); transform: translate(0, 0); }
+  to { left: 100%; top: var(--to); transform: translate(-100%, -100%); }
+}
+
+@keyframes turn {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(-1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fish-tank { display: none; }
 }
 
 a {
